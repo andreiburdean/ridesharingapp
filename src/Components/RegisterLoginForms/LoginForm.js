@@ -13,15 +13,15 @@ function LoginForm(props) {
   };
 
   const handleButtonClicked = () => {
-    //const formData = { username, password };
-    if(dataBase["user"] === username && dataBase["password"] === password)
+    const formData = { username, password };
+    /*if(dataBase["user"] === username && dataBase["password"] === password)
     {
       navigate("./MainApp");
     }
     else{
       alert("Wrong username or password");
-    }
-    /*fetch('/api/login', {
+    }*/
+    fetch('/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,12 +31,13 @@ function LoginForm(props) {
       .then(response => response.json())
       .then(data => {
         if (data.validation === true) {
-          history.push("./src/MainApp");
+          console.log(true)
         } else {
+          console.log("nothing")
         }
       })
       .catch(error => {
-      });*/
+      });
   };
   
 
